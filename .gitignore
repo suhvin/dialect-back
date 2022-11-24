@@ -50,3 +50,6 @@ coverage.xml
 
 # example database
 db.sqlite3
+
+# firebase-secret
+firebase-secret.json
