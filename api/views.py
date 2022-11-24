@@ -9,14 +9,15 @@ load_dotenv()
 def send_sms(request):     
     if request.method == 'POST':
         
-        pay_msg = request.PCD_PAY_MSG
+        # pay_msg = request.PCD_PAY_MSG
+        print(request)
 
         account_sid = os.getenv('TWILIO_ACCOUNT_SID')
         auth_token = os.getenv('TWILIO_AUTH_TOKEN')
         client = Client(account_sid, auth_token)
 
         client.messages.create(
-            body=pay_msg,
+            body="Hi there!",
             from_=os.getenv('PHONE_NUMBER'),
             to='+821040302748'
         )
