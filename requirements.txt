@@ -3,3 +3,6 @@ djangorestframework
 apscheduler
 twilio
 python-dotenv
+pandas
+numpy
+firebase-admin
