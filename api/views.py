@@ -9,7 +9,7 @@ load_dotenv()
 def send_sms(request):     
     if request.method == 'POST':
         
-        pay_msg = request.data.PCD_PAY_MSG
+        pay_msg = request.PCD_PAY_MSG
 
         account_sid = os.getenv('TWILIO_ACCOUNT_SID')
         auth_token = os.getenv('TWILIO_AUTH_TOKEN')
