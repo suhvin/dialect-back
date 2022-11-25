@@ -17,6 +17,12 @@ def do_something1():
         print("berlin")
     except:
         print("Already Connected something1")
+    
+    db = firestore.client()
+    data = db.collection(u'flag').document(u'control')
+    data.update({
+    'count' : 1004
+    })
 
 def do_something2():
     # Use the application default credentials
