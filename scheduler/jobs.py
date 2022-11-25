@@ -14,7 +14,7 @@ def do_something1():
 
     try:
         firebase_admin.initialize_app(cred)
-        print("something1")
+        print("berlin")
     except:
         print("Already Connected something1")
 
@@ -25,6 +25,6 @@ def do_something2():
 
     try:
         firebase_admin.initialize_app(cred)
-        print("something2")
+        print("tokyo")
     except:
         print("Already Connected something2")
