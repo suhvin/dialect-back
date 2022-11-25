@@ -28,8 +28,8 @@ SECRET_KEY = os.getenv('DJANG_SECRET_KEY')
 DEBUG = True
 
 # ALLOWED_HOSTS = ['43.201.21.27', 'ec2-43-201-21-27.ap-northeast-2.compute.amazonaws.com']
-# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-ALLOWED_HOSTS = ['3.39.231.188', 'ec2-3-39-231-188.ap-northeast-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+# ALLOWED_HOSTS = ['3.39.231.188', 'ec2-3-39-231-188.ap-northeast-2.compute.amazonaws.com']
 
 
 # Application definition

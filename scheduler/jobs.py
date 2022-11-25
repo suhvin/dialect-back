@@ -21,7 +21,7 @@ def do_something1():
     db = firestore.client()
     data = db.collection(u'flag').document(u'control')
     data.update({
-    'count' : 1004
+    'count' : 1005
     })
 
 def do_something2():
@@ -34,3 +34,9 @@ def do_something2():
         print("tokyo")
     except:
         print("Already Connected something2")
+
+    db = firestore.client()
+    data = db.collection(u'flag').document(u'control')
+    data.update({
+    'before' : 1005
+    })

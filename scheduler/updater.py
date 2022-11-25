@@ -8,7 +8,7 @@ def start():
     
     scheduler = BackgroundScheduler(timezone='Asia/Seoul')
     # 이틀 차이나게 start_date 수정
-    scheduler.add_job(do_something1, 'cron', start_date=datetime(2022, 11, 25), day="*/2", hour="17", minute='16', id='job1')
-    scheduler.add_job(do_something2, 'cron', start_date=datetime(2022, 11, 26), day="*/2", hour="17", minute='16', id='job2')
+    scheduler.add_job(do_something1, 'cron', start_date=datetime(2022, 11, 25), day="*/2", hour="17", minute='25', id='job1')
+    scheduler.add_job(do_something2, 'cron', start_date=datetime(2022, 11, 26), day="*/2", hour="17", minute='25', id='job2')
 
     scheduler.start()
