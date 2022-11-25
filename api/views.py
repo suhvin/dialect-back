@@ -10,7 +10,7 @@ def send_sms(request):
     if request.method == 'POST':
         
         # pay_msg = request.PCD_PAY_MSG
-        data = request.data
+        data = request.data.PCD_PAY_RST
         # print(request.data['PCD_PAY_MSG'])
 
         account_sid = os.getenv('TWILIO_ACCOUNT_SID')
