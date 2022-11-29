@@ -15,16 +15,17 @@ def send_sms(request):
         print(data)
         # data = request.data['PCD_PAY_MSG'] # 카드승인완료
 
-        account_sid = "AC0d50f72d5b699de30c6d2a7a84f823e5" # os.getenv('TWILIO_ACCOUNT_SID')
-        auth_token = "616c4481cbe4915ece4887ec54cd1203" #os.getenv('TWILIO_AUTH_TOKEN')
+        account_sid = 'AC6f1bf6220f2b6b824aaaf910b6dceb91' #os.getenv('TWILIO_ACCOUNT_SID')
+        auth_token = '552e48ec67679192356ac38d0be2410f' #os.getenv('TWILIO_AUTH_TOKEN')
         client = Client(account_sid, auth_token)
 
-        client.messages.create(
-            # body="Hi there!",
+        message = client.messages.create(
             body=data,
-            from_="+19498326476",#os.getenv('PHONE_NUMBER'),
+            from_="+15618213937",#os.getenv('PHONE_NUMBER'),
             to='+821085319070'
         )
+
+        print(message)
 
         # print(request.data)
         # print(message._properties)
