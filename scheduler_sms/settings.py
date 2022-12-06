@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'core',
-    'scheduler'
+    'scheduler',
+    'utils'
 ]
 
 MIDDLEWARE = [

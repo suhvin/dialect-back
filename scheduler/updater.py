@@ -2,7 +2,7 @@ from datetime import datetime
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from .jobs import do_something1, do_something2
-
+from day1.day1 import do_day1
 
 def start():
     

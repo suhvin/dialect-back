@@ -11,7 +11,7 @@ from twilio.rest import Client
 def do_something1():
     # Use the application default credentials
     # cred = credentials.Certificate("/content/drive/MyDrive/secret key/yeonpick-0727-firebase-adminsdk-41a1r-57f7d55c29.json")
-    cred = credentials.Certificate(os.getcwd() + "/scheduler/firebase-secret.json")
+    cred = credentials.Certificate(os.getcwd() + "/scheduler/yeonpick0727-key.json")
 
     try:
         firebase_admin.initialize_app(cred)
@@ -20,7 +20,7 @@ def do_something1():
         print("Already Connected something1")
     
     db = firestore.client()
-    data = db.collection(u'flag').document(u'control')
+    data = db.collection(u'admin').document(u'control')
     # data.update({
     # 'count' : 1005
     # })

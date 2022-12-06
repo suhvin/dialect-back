@@ -1,33 +1,30 @@
 import os
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from twilio.rest import Client
 from dotenv import load_dotenv
+from utils.getDate import getDate
+from .pay.pay import pay
+from .pay.payTicket import payTicket
 
 load_dotenv()
 @api_view(['POST'])
 def send_sms(request):     
     if request.method == 'POST':
         
-        print("test")
-        print(request.data) # PCD_PAY_RST
-        data = request.data['PCD_PAY_RST'] # success
-        print(data)
-        # data = request.data['PCD_PAY_MSG'] # 카드승인완료
-
-        account_sid = 'AC6f1bf6220f2b6b824aaaf910b6dceb91' #os.getenv('TWILIO_ACCOUNT_SID')
-        auth_token = '552e48ec67679192356ac38d0be2410f' #os.getenv('TWILIO_AUTH_TOKEN')
-        client = Client(account_sid, auth_token)
-
-        message = client.messages.create(
-            body=data,
-            from_="+15618213937",#os.getenv('PHONE_NUMBER'),
-            to='+821085319070'
-        )
-
-        print(message)
-
-        # print(request.data)
-        # print(message._properties)
+        goods = request.data['PCD_PAY_GOODS'] # success
+        oid = request.data['PCD_PAY_OID'] # success
+        date = getDate()
+        if goods.find('티켓')==-1 :
+            if goods.find('미팅')==-1 :
+                pay('dating', oid, date)
+            else :
+                pay('meeting', oid, date)
+        else :
+            if goods.find('티켓1')!=-1 :
+                payTicket(1, oid)
+            elif goods.find('티켓3')!=-1 :
+                payTicket(3, oid)
+            elif goods.find('티켓5')!=-1 :
+                payTicket(5, oid)
         
         return Response({"message": "Got some data!", "data": request.data})
