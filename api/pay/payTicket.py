@@ -17,7 +17,6 @@ def payTicket(num, oid):
         print("Already Connected something1")
 
     phone = oid[-11:]
-    print(phone)
     db = firestore.client()
     data = db.collection(u'store').document(u'u'+phone)
     ticketNum = data.get().to_dict()['ticketPlus']
@@ -25,4 +24,4 @@ def payTicket(num, oid):
     data.update({
     'ticketPlus' : ticketNum
     })
-    sendMessage('payTicket', phone)
+    # sendMessage('payTicket', phone)
